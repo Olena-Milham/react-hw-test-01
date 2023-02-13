@@ -8,18 +8,18 @@ const Painting =({imageUrl, title, profile, author, price, quantity})=>{
                 Author: <a href={profile}> {author.tag} </a>
             </p>
             <p> Price: {price} credits</p>
-            <p> Availability: {quantity<10 ? 'running low' : 'available'}</p>
+            <p> Availability: {quantity<10 ? 'running low.isRequired' : 'available'}</p>
 <button type ='button'> Add to cart </button>
         </div>
     )
 };
 Painting.propTypes={
-    imageUrl: PropTypes.string,
-    title: PropTypes.string,
-    profile: PropTypes.string,
-    author:PropTypes.string,
-    price:PropTypes.number,
-    quantity:PropTypes.number,
+    imageUrl: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    profile: PropTypes.string.isRequired,
+    author:PropTypes.string.isRequired,
+    price:PropTypes.number.isRequired,
+    quantity:PropTypes.number.isRequired,
 
 
 }
