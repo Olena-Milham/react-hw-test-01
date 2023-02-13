@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-const Painting =({imageUrl, title, profile, author, price})=>{
+const Painting =({imageUrl, title, profile, author, price, quantity})=>{
     return(
         <div>
             <img src={imageUrl} alt={title} width="480"/>
@@ -8,7 +8,7 @@ const Painting =({imageUrl, title, profile, author, price})=>{
                 Author: <a href={profile}> {author.tag} </a>
             </p>
             <p> Price: {price} credits</p>
-            <p> Availability: out of stock or available </p>
+            <p> Availability: {quantity<10 ? 'running low' : 'available'}</p>
 <button type ='button'> Add to cart </button>
         </div>
     )
@@ -19,6 +19,7 @@ Painting.propTypes={
     profile: PropTypes.string,
     author:PropTypes.string,
     price:PropTypes.number,
+    quantity:PropTypes.number,
 
 
 }
