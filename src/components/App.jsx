@@ -1,16 +1,15 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
+import Painting from './Painting';
+import paintings from './paintings.json'
+
+export default function App () {
+  return (<div>
+    <Painting
+    imageUrl={paintings[0].url}
+    title={paintings[0].title}
+    author = {paintings[0].author}
+    profile ={paintings[0].profile}
+    price = {paintings[0].price}
+    />
+    </div>)
+
 };
