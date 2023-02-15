@@ -1,5 +1,5 @@
-
-import Painting from './Painting'
+import Painting from './Painting';
+import PropTypes from 'prop-types';
 function PaintingList ({cards}) {
    return (
     <ul>
@@ -18,5 +18,12 @@ quantity={card.quantity}
     ))}
 </ul>
    );
+}
+PaintingList.propTypes={
+    cards: PropTypes.arrayOf(
+        PropTypes.shape({
+            id:PropTypes.string.isRequired,
+        })
+    )
 }
 export default PaintingList;
